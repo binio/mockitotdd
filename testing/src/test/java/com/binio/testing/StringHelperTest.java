@@ -14,11 +14,23 @@ public class StringHelperTest {
     }
 
     @Test
-    public void areFirstAndLastTwoCharactersTheSame() throws Exception {
+    public void truncateAInFirstTwoPositions_whenTwoAPresentAtTheBegining() throws Exception {
         StringHelper helper = new StringHelper();
         assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
+    }
+
+    @Test
+    public void truncateAInFirstTwoPositions_whenOneAPresentAtTheBegining() throws Exception {
+        StringHelper helper = new StringHelper();
         assertEquals("CD", helper.truncateAInFirst2Positions("ACD"));
+    }
+
+    @Test
+    public void truncateAInFirstTwoPositions_whenNoAPresentAtTheBegining() throws Exception {
+        StringHelper helper = new StringHelper();
         assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
     }
+
+
 
 }
