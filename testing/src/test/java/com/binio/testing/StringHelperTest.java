@@ -26,6 +26,16 @@ public class StringHelperTest {
         assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
     }
 
+    @Test
+    public void testAreFirstAndLastTwoCharactersTheSame_basicScenario() throws Exception {
+        assertEquals(false, helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+    }
+
+    @Test
+    public void testAreFirstAndLastTwoCharactersTheSame_basicPositiveScenario() throws Exception {
+        assertEquals(true, helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+    }
+
 
 
 }
