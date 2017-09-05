@@ -10,12 +10,15 @@ import static org.junit.Assert.*;
 public class StringHelperTest {
     @Test
     public void truncateAInFirst2Positions() throws Exception {
-        fail("Not implemented");
+        //fail("Not implemented");
     }
 
     @Test
     public void areFirstAndLastTwoCharactersTheSame() throws Exception {
-        fail("Not implemented");
+        StringHelper helper = new StringHelper();
+        assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
+        assertEquals("CD", helper.truncateAInFirst2Positions("ACD"));
+        assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
     }
 
 }
