@@ -1,5 +1,6 @@
 package com.binio.testing;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,8 +14,9 @@ public class StringHelperTest {
     StringHelper helper;
 
     @Before
-    public void setup(){
+    public void setup() {
         helper = new StringHelper();
+        System.out.println("run before test...");
     }
 
     @Test
@@ -42,6 +44,10 @@ public class StringHelperTest {
         assertEquals(true, helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
     }
 
+    @After
+    public void teardown() {
+        System.out.println("run after test...");
+    }
 
 
 }
