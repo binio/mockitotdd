@@ -16,10 +16,10 @@ public class TodoBusinessImplMockTest {
 
     @Test
     public void testRetrieveTodosRealatedToSpring_usingMock() {
-    TodoService todoServiceMock = mock(TodoService.class);
-    when(todoServiceMock.retrievieTodos("Dummy")).thenReturn(Arrays.asList("Learn Spring MVC", "Learn to run in Spring", "Learn to sing"));
-    TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
-    List<String> filteredTodos = todoBusinessImpl.retrieveTodosRealatedToSpring("Dummy");
-    assertEquals(2,filteredTodos.size());
+        TodoService todoServiceMock = mock(TodoService.class);
+        when(todoServiceMock.retrievieTodos("Dummy")).thenReturn(Arrays.asList("Learn Spring MVC", "Learn to run in Spring", "Learn to sing"));
+        TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
+        List<String> filteredTodos = todoBusinessImpl.retrieveTodosRealatedToSpring("Dummy");
+        assertEquals(2, filteredTodos.size());
     }
 }
