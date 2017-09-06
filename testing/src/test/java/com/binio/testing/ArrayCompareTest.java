@@ -32,4 +32,13 @@ public class ArrayCompareTest {
             assertArrayEquals(expected, numbers);
 
     }
+//testing performance with timeout
+    @Test(timeout=1000)
+    public void testSort_performance(){
+        int array[] = {21,23,4};
+        for(int i=1; i<=100000000; i++) {
+            array[0] = i;
+            Arrays.sort(array);
+        }
+    }
 }
