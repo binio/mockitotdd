@@ -22,4 +22,10 @@ public class TodoBusinessImplMockTest {
         List<String> filteredTodos = todoBusinessImpl.retrieveTodosRealatedToSpring("Dummy");
         assertEquals(2, filteredTodos.size());
     }
+
+    //agument matchers, mock List etc.
+    @Test
+    public void test() {
+
+    }
 }
