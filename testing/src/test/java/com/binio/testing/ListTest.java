@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -40,6 +41,25 @@ public class ListTest {
         assertEquals("In28Minutes",listMock.get(0));
         //assertEquals("In28Minutes",listMock.get(1));
 
+    }
+
+    @Test
+    public void testMockListGetMethod_anyInt() {
+        List listMock = mock(List.class);
+        //Argument matcher anyInt()
+        when(listMock.get(anyInt())).thenReturn("In28Minutes");
+        assertEquals("In28Minutes",listMock.get(0));
+        assertEquals("In28Minutes",listMock.get(1));
+        assertEquals("In28Minutes",listMock.get(1));
+
+    }
+
+    @Test(expected=RuntimeException.class)
+    public void testMockListGetMethod_exception() {
+        List listMock = mock(List.class);
+        //Argument matcher, exception
+        when(listMock.get(0)).thenThrow(new RuntimeException("Zoonk"));
+        listMock.get(0);
     }
 
 
