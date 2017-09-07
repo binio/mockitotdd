@@ -8,6 +8,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 /**
@@ -28,6 +29,7 @@ public class VerifyMethodCall {
 
         //Then
         verify(todoServiceMock).deleteTodo("Learn to dance");
+        verify(todoServiceMock, never()).deleteTodo("Spring MVC");
         //verify(todoServiceMock).deleteTodo("Spring MVC"); this will not pass as delete removes only Spring elements
     }
 }
