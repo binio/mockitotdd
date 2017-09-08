@@ -6,9 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
-import static org.hamcrest.Matchers.arrayWithSize;
-import static org.hamcrest.Matchers.isEmptyString;
+import static org.hamcrest.Matchers.*;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.core.Every.everyItem;
 import static org.hamcrest.core.IsCollectionContaining.hasItems;
@@ -42,5 +40,6 @@ public class HamcrestMatchersTest {
         Integer[] marks = {1,2,3,4};
         assertThat(marks, arrayWithSize(4));
         assertThat(marks, arrayContainingInAnyOrder(4,2,3,1));
+        assertThat(marks, arrayContaining(1,2,3,4));
     }
 }
