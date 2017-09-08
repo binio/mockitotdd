@@ -1,6 +1,9 @@
 package com.binio.testing;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,11 +15,14 @@ import static org.mockito.Mockito.when;
 /**
  * Created by tomasz.biniecki on 06/09/2017.
  */
-public class TodoBusinessImplMockTest {
+@RunWith(MockitoJUnitRunner.class)
+public class TodoBusinessImplMockInjectMocksTest {
+
+    @Mock
+    TodoService todoServiceMock;
 
     @Test
     public void testRetrieveTodosRealatedToSpring_usingMock() {
-        TodoService todoServiceMock = mock(TodoService.class);
         when(todoServiceMock.retrievieTodos("Dummy")).thenReturn(Arrays.asList("Learn Spring MVC", "Learn to run in Spring", "Learn to sing"));
         TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
         List<String> filteredTodos = todoBusinessImpl.retrieveTodosRealatedToSpring("Dummy");
