@@ -31,9 +31,9 @@ public class SystemUnderTest {
             return UtilityClass.staticMethod(sum);
         }
 
-        private long privateMethodUnderTest() {
+        private int privateMethodUnderTest() {
             List<Integer> stats = dependency.retrieveAllStats();
-            long sum = 0;
+            int sum = 0;
             for (int stat : stats)
                 sum += stat;
             return sum;
