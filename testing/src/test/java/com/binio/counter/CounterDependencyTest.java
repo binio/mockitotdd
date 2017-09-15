@@ -20,4 +20,11 @@ public class CounterDependencyTest {
         assertEquals("OK", counter.getResult(counter.generator.generate()));
         assertEquals("NOT OK", counter.getResult(counter.generator.generate()));
     }
+
+    @Test
+    public void generateFriendly() {
+        when(generator.generateFriendly()).thenReturn(6).thenReturn(12).thenReturn(18);
+        Counter counter = new Counter(generator);
+        assertEquals("OK", counter.getResult(counter.generator.generateFriendly()));
+    }
 }
