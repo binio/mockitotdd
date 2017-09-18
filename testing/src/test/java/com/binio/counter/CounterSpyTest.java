@@ -1,5 +1,6 @@
 package com.binio.counter;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,6 +23,11 @@ public class CounterSpyTest {
     @Before
     public void setup() {
         counter = new Counter(generator);
+    }
+
+    @After
+    public void teardown() {
+        counter = null;
     }
 
     @Test
@@ -50,8 +56,8 @@ public class CounterSpyTest {
 
         //Then
         assertEquals(result1,"OK");
-        assertEquals(result2,"OK");
-        assertEquals(result3,"OK");
+        assertEquals(result2,"NOT OK");
+        assertEquals(result3,"NOT OK");
 
     }
 
