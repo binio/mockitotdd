@@ -9,7 +9,10 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertThat;
+import static org.mockito.Matchers.isNotNull;
 import static org.mockito.Mockito.when;
+import static org.hamcrest.Matchers.*;
 
 /**
  * Created by tomasz.biniecki on 19/09/2017.
@@ -39,5 +42,6 @@ public class CounterAnnotationTest {
         //System.out.println(generator.generate());
         String actual = counter.getResult(generator.generate());
         assertNotEquals("OK", actual);
+        assertThat(actual, equalToIgnoringCase("NOT OK"));
     }
 }
